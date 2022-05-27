@@ -1,5 +1,7 @@
 package com.mycompany.arbitrage_problem;
 
+import com.mycompany.arbitrage_problem.Arc;
+import com.mycompany.arbitrage_problem.Graph;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

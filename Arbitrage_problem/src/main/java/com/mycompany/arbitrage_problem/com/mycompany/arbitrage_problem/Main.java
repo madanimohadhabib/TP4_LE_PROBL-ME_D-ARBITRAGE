@@ -1,4 +1,4 @@
- package com.mycompany.arbitrage_problem;
+package com.mycompany.arbitrage_problem;
 import java.io.File;
 import com.mycompany.arbitrage_problem.BellmanFord;
 import com.mycompany.arbitrage_problem.Graph;
@@ -16,7 +16,7 @@ public class Main {
     
     
  
-    private final int vertices;
+    private final int vertices;                    // declaration des arcs et de la matrice d'adjacence
     private double [][] adjacency_matrix;
  
     public Main(int v) 
@@ -25,7 +25,9 @@ public class Main {
         adjacency_matrix = new double [vertices + 1][vertices + 1];
     }
  
-    public void makeEdge(int to, int from, double edge)   
+    public void makeEdge(int to, int from, double edge)   // cette procedure a pour un bur de remplir les sommets,
+                                                          // les arcs avec poids associer a chaque un
+                                                          // dans le graph
     {
         try 
         {
@@ -37,7 +39,7 @@ public class Main {
         }
     }
  
-    public double getEdge(int to, int from) 
+    public double getEdge(int to, int from)         // fonction recuperation des arcs
     {
         try 
         {
@@ -69,12 +71,12 @@ public class Main {
  
             graph = new Main(v);
  
-            System.out.println("Enter les sommets celon cet ordre s'il vou plait: <to> <from> <poid>");
+            System.out.println("Enter les sommets celon cet ordre s'il vou plait: <to> ESPACE <from> ESPACE  <poid> ENTRRE");
             while (count <= v) 
             {
-                to = sc.nextInt();
+                to = sc.nextInt();          // lecture des sommets debut-fin (arcs) 
                 from = sc.nextInt();
-                poidsR= sc.nextDouble();
+                poidsR= sc.nextDouble();    // poids de chaque arc
  
                   // le poids est sous ca originale format
                 graph.makeEdge(to, from, poidsR);
@@ -93,7 +95,7 @@ public class Main {
                     if(graph.getEdge(i, j)!=1 || graph.getEdge(i, j)!=0.0 ){
                         
                      
-                        System.out.println("de :"   +i+   "a :"   +j+   "     poid :"    +graph.getEdge(i, j));
+                        System.out.println("de :"   +i+   "\ta :"   +j+   "     poid :"    +graph.getEdge(i, j));
                     }
                 
             }
@@ -105,7 +107,7 @@ public class Main {
             
             
             
-            System.out.println("La matrice d'adjacence du graphe est: ");  //affichage
+            System.out.println("La matrice d'adjacence du graphe pondéré est: ");  //affichage
             System.out.print("  ");                                        // de la matrice
             for (int i = 1; i <= v; i++)                                   // d'adjacence
                 System.out.print(i + " ");

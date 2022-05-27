@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class Graph {         // structure de graph // il est caractériser par sommets nommé edges
                                                    // aussi caractériser par arcs nommé vertices
                                                    // orionté est pondéré
-    private ArrayList<Sommet> edges;
+    private ArrayList<Arc> edges;
     private int[] vertices;
-    public Graph(ArrayList<Sommet> edges, int vertices){
+    public Graph(ArrayList<Arc> edges, int vertices){
         this.edges = edges;
         this.vertices = new int[vertices];
         for(int i=0; i< vertices; i++){
@@ -18,7 +18,7 @@ public class Graph {         // structure de graph // il est caractériser par s
         }
     }
 
-    public ArrayList<Sommet> getEdges() {
+    public ArrayList<Arc> getEdges() {
         return edges;
     }
 

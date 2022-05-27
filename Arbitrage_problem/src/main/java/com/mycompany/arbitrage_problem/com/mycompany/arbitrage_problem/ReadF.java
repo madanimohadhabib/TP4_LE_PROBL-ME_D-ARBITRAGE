@@ -1,7 +1,5 @@
 package com.mycompany.arbitrage_problem;
 
-import com.mycompany.arbitrage_problem.Sommet;
-import com.mycompany.arbitrage_problem.Graph;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -11,10 +9,10 @@ import java.util.ArrayList;
  *
  * @author C A T E C H
  */
-public class ReadF {            
+public class ReadF {                         
     private BufferedReader br;
     public ReadF(String path){
-        try { 
+        try {                                // creation est lectture d'un fichier
             File file = new File(path);
             this.br = new BufferedReader(new FileReader(file));
         }catch(Exception  e){
@@ -26,7 +24,7 @@ public class ReadF {
             String line;
             String[] weights = new String[0];
             int i = 0;
-            ArrayList<Sommet> edges = new ArrayList<>();
+            ArrayList<Arc> edges = new ArrayList<>();
             while ((line = this.br.readLine()) != null) {
                 i++;
                 weights = line.split("\\s+");
@@ -34,7 +32,7 @@ public class ReadF {
                     // on a un graph avec poids.
                     // on change le poids sous format -log(poids)
                     double weight = -(Math.log(Double.parseDouble(weights[j]))/Math.log(2));
-                    Sommet eg = new Sommet(i, j+1, weight);
+                    Arc eg = new Arc(i, j+1, weight);
                     edges.add(eg);
                 }
             }
